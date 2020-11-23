@@ -1,9 +1,9 @@
 
 export default class apiService {
     constructor() {
-        this.searchImg = 1;
+        this.searchImg = '';
         this.startPage = 1;
-        this.per_page = 12;
+        this.per_page = 9;
         /* this.MY_KEY = '19219612-10b40d6746041ffd691397b9a'; */
     }
     
@@ -17,7 +17,7 @@ export default class apiService {
             .then(response => response.json())
             .then(e => {
                 console.log(e);
-                this.inrementPage();
+            this.inrementPage(); 
                 return e;
             }
                 
@@ -25,11 +25,11 @@ export default class apiService {
     }
 
     inrementPage() {
-        this.page += 1;
+        this.startPage += 1;
     }
 
     resetPage() {
-        this.page = 1;
+        this.startPage = 1;
     }
 
     get img() {

@@ -21,8 +21,9 @@ refs.clickButton.addEventListener('click', onLoadMore);
 
 function onSearch(event) {
     event.preventDefault();
+    clearPage()
     clearResult();
-    clearPage();
+    api.resetPage();
     api.img = event.target.value;
     if (api.img.length === 0 || api.img === " ") {
         clearResult();
@@ -36,6 +37,7 @@ function onSearch(event) {
     
     api.fetchApi().then(renderCard)
         .catch(onFetchError);
+    onScrollTo();
      
 }
 
@@ -49,7 +51,7 @@ function appendMarkUp(html) {
 }
 function onLoadMore() {
     api.fetchApi().then(renderCard)
-    api.inrementPage()
+    onScrollTo()
 }
 
 function onFetchError(error) {
@@ -57,20 +59,6 @@ function onFetchError(error) {
     showError();
 }
 
-/* function appendCountries(country) {
-    const markUp = countryListTmpl(country);
-    console.log(markUp);
-    const markUpName = countryNameTmpl(country);
-    console.log(markUpName);
-
-    if (country.length === 1) {
-        return (refs.containerList.insertAdjacentHTML('beforeend', markUp));   
-    }
-
-    if (country.length > 1) {
-        return (refs.containerList.insertAdjacentHTML('beforeend', markUpName))
-    }
-} */
 
 function showError() {
     const myError = error({      
@@ -94,6 +82,16 @@ function clearResult() {
 
 function clearPage() {
         refs.containerList.innerHTML = "";
+}
+function onScrollTo() {
+    let value = document.body.scrollHeight;
+     setTimeout(() => {
+      window.scrollTo({
+        top: value,
+        left: 0,
+        behavior: 'smooth',
+      });
+    }, 500);
 }
 
 
