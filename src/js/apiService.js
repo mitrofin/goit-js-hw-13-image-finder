@@ -37,9 +37,11 @@ export default class apiService {
     }
     set img(newImg) {
         this.searchImg = newImg;
-    }              
+    }        
+    
     
 }
+
 
 
     
