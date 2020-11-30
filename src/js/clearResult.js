@@ -1,7 +1,7 @@
-import getRefs from '../js/get-refs';
+import getRefs from './getRefs';
 
 const refs = getRefs();
 
-export default function ClearResult() {
+export default function clearResult() {
         refs.searchForm.value = "";
     }

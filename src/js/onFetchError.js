@@ -1,4 +1,4 @@
-import showError from './show-error';
+import showError from './showError';
 
 export default function onFetchError(error) {
     console.log('catch');

@@ -1,6 +1,6 @@
-import appendMarkUp from '../js/appendMarkUp';
-import cardTmpl from '../templates/images-card.hbs';
-import apiService from '../js/apiService.js';
+import appendMarkUp from './appendMarkUp';
+import cardTmpl from '../templates/imagesCard.hbs';
+import apiService from './apiService.js';
 const api = new apiService();
 
 

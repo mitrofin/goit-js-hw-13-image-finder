@@ -1,6 +1,6 @@
 import '@pnotify/core/dist/BrightTheme.css';
 import '@pnotify/core/dist/PNotify.css';
-const { info} = require('@pnotify/core');
+const { info } = require('@pnotify/core');
 
 
 export default function showInfo() {
